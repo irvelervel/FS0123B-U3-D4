@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import CustomNavbar from './components/CustomNavbar'
 import Home from './components/Home'
 import ReservationForm from './components/ReservationForm'
+import ReservationList from './components/ReservationList'
 // questo rende disponibile il file CSS di bootstrap a tutto il mio progetto
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       parte del testo nella sezione "brand" */}
       {/* <CustomNavbar brandTitle="Stefano" /> */}
 
+      <ReservationList />
       <ReservationForm />
 
       <Home />

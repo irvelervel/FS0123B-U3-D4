@@ -60,6 +60,18 @@ class ReservationForm extends Component {
       if (response.ok) {
         // codice 200/201, tutto a posto!
         alert('PRENOTAZIONE SALVATA CORRETTAMENTE!')
+        // svuotiamo il form resettando l'oggetto state
+        // al suo valore iniziale!
+        this.setState({
+          reservation: {
+            name: '',
+            phone: '',
+            numberOfPeople: 1,
+            smoking: false,
+            dateTime: '',
+            specialRequests: '',
+          },
+        })
       } else {
         // errore nei dati inviati? server in crash?
         console.log('errore nella chiamata :(')
@@ -72,8 +84,9 @@ class ReservationForm extends Component {
   render() {
     return (
       <Container>
-        <Row className="justify-content-center mt-3">
+        <Row className="justify-content-center mt-5">
           <Col xs={12} md={8} lg={6}>
+            <h2>PRENOTA IL TUO TAVOLO!</h2>
             <Form
               onSubmit={(e) => {
                 e.preventDefault()
